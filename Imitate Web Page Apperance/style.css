@@ -1,0 +1,306 @@
+
+#banner{
+    height: 200px;
+    width: 340px;
+    background-color: black;
+    margin: auto;
+    margin-top: 3%;
+    text-align: center;
+    #border : solid 1px gold;
+}
+
+#ubanner{
+    display: inline-block;
+    height: 50%;
+    margin-top: 10%;
+    width: 70%;
+    
+}
+
+
+h2{
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left:8%;
+    padding-bottom: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: none;
+    font-family: sans-serif;
+    color: #A9A9A9;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+hr{
+    
+    border: 1px solid #A9A9A9;
+    background-color: black;
+}
+
+#lbanner{
+    display: inline-block;
+    margin-top : -35%;
+    width: 60%;
+    height: 60%;
+    
+    color : white;
+}
+
+#text_number{
+    color: white;
+    font-size:3em;
+    border-bottom: 4px solid white;
+    padding-bottom: 0.2px;
+    font-family: sans-serif;
+    font-weight: 350;
+}
+
+#no_13{
+    color: white;
+    font-family: sans-serif;
+    font-size: 8em;
+    font-weight: 350;
+   
+}
+
+#no13{
+    text-decoration: none;
+}
+
+
+#Image1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 840px;
+    height: 600px; 
+   
+}
+
+
+#image{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+a
+{
+  outline:none;
+}
+
+
+#ImageSec{
+    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width : 480px;
+    height: 180px;
+    margin-top: -515px;
+}
+
+#subscript{
+    
+    display: inline-block;
+    font-size: 10px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    color: #DAA520;
+    margin-left: 25px;
+}
+
+#gentext{
+    margin-top: 2%;
+    font-size: 13px;
+    font-weight: 550;
+    word-spacing: 1px;
+    font-family: sans-serif;
+}
+
+
+#getintouch
+{
+    display: inline-block;
+    margin-top: 0px;
+    text-align: center;
+    border : 2px solid black;
+    letter-spacing: 3px;
+    font-size: 10px;
+    width: 42%;
+    
+    margin-left: auto;
+    margin-right: auto;
+    color : black;
+    height : 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}
+
+
+#getintouch  p{
+    display: inline-block;
+    margin-top: 2%;
+}
+
+#getintouch:hover,a:hover {
+    background-color: black;
+    color:white;
+    
+}
+
+body{
+  margin:0;
+  padding: 0;
+}
+
+table{
+    padding : 15px;
+}
+
+
+table,tr,td{
+     
+    width:100%;
+    text-align: left;
+    border-spacing: 0.8em;
+    
+}
+
+tr,td{
+    height:10%;
+    width:20%;
+}
+
+#lower{
+    display: inline-block; 
+    width:100%;
+    height: 48%;
+    background-color: #0F0D0D;
+    
+}
+.header_row{
+  color: #DAA520;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 1px;
+    
+}
+.second_header{
+  color: white;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+    letter-spacing: 1px;
+}
+.small_text{
+    color: white;
+    font-family: sans-serif;
+    font-size: 11px;
+    font-weight: 12;
+}
+
+.mail{
+    color:white;
+}
+
+#contactus{
+    text-decoration: none;
+    border: 2px solid white;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+    color:white;
+    font-family: sans-serif;
+    font-size: 10px;
+    text-align: center;
+    
+    letter-spacing: 2px;
+    font-weight: 200;
+}
+#contactus:hover,a:hover {
+    background-color: white;
+    color:black;
+    
+}
+
+#one{
+    float:left;
+    width: 39.7%;
+    height: 28%;
+    text-align: center;
+    font-family: sans-serif;
+    font-size:8px;
+    color:white;
+    margin:auto;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #3B3B3B;
+    
+    
+    
+}
+#two{
+ float:right;   
+    width:60.05%;
+    height: 28%;
+    color:darkgoldenrod;
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin:auto;
+    border-left: 0.2px solid #3B3B3B;
+    border-bottom: 0.2px solid #3B3B3B;
+    
+    
+}
+
+#three{
+    width:100%;
+    height:80%;
+}
+
+#textfield{
+    height: 30px;
+    width: 45%;
+}
+#signup{
+    text-decoration: none;
+    border: 2px solid white;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color:white;
+    font-family: sans-serif;
+    font-size: 8px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#signup:hover,a:hover {
+    background-color: white;
+    color:black;
+    }
+
+#signuptext{
+    margin-left:-42%;
+}
+#read{
+    text-decoration: none;
+    color:white;
+    
+}
+
+#read:hover,a:hover{
+    text-decoration: underline;
+    background-color: black;
+    color:white;
+}

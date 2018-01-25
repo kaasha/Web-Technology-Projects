@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <style>
+            #formdiv
+            {
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                margin-top: 20%;
+                
+            }
+        </style>
+    </head>   
+<body>
+    
+ <div id="formdiv">
+    <form method="post" id='frontpage'>
+        <b>Enter URL for Airlines List XML File</b><br/><br/>
+        <input type="text" name="filename" style="margin-left:45px;">
+        <br/><br/>
+        <input type="button" name="Submit" value="Submit Query" onClick="viewXML(this.form)" style="margin-left:60px;">
+    </form>
+</div>       
+    
+    
+    <script type="text/javascript">
+        
+        function viewXML(fn)
+            {   
+                var url = fn.filename.value;
+                    if(url=="" || url==null || url.trim()== "")
+                        {
+                            alert('EMPTY FILE NAME!');
+                            return false;
+                        }
+                xmlhttp=new XMLHttpRequest(); 
+                xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 1) return ;
+
+                if (xmlhttp.status == 404) {
+                    alert("File not found!");
+                    return false;
+                }
+                };
+            try{
+                    xmlhttp.open("GET",url,false);
+                    xmlhttp.send();
+                    }
+                    catch(e)
+                        {
+                           alert('FILE NOT FOUND!!'); 
+                            return false;
+                        }
+            xmlDoc=xmlhttp.responseXML; 
+             
+            html_text="<html><head></head><body>";
+            html_text+="<table border='1'>";
+            
+            headers=xmlDoc.getElementsByTagName("Header");
+            data=xmlDoc.getElementsByTagName("Data");
+            for(i=0;i<data.length;i++){
+                html_text+="<th>";
+                html_text+=headers[0].getElementsByTagName("Data")[i].childNodes[0].nodeValue;
+                html_text+="</th>";
+                }
+            
+            row=xmlDoc.getElementsByTagName("Row");
+            for(i=0;i<row.length;i++)
+                {   //Airline
+                    html_text+="<tr><td>";
+                    if (row[i].getElementsByTagName("Airline")[0].childNodes.length && row[i].getElementsByTagName("Airline")[0].childNodes[0].nodeValue.trim()!='')
+                    
+                    { html_text+=row[i].getElementsByTagName("Airline")[0].childNodes[0].nodeValue; }
+                    else
+                     {
+                       html_text+="<br/>" ; 
+                     }
+                        
+                    html_text+="</td>";
+                    //IATA
+                    html_text+="<td>";
+                    if (row[i].getElementsByTagName("IATA")[0].childNodes.length && row[i].getElementsByTagName("IATA")[0].childNodes[0].nodeValue.trim()!='')
+                    
+                    { html_text+=row[i].getElementsByTagName("IATA")[0].childNodes[0].nodeValue; }
+                    else
+                     {
+                       html_text+="<br/>"  
+                     }
+                        
+                    html_text+="</td>";
+                    //HUBS
+                    
+                    
+                    html_text+="<td>";
+                    hubs=row[i].getElementsByTagName("Hubs")[0];
+                    if (hubs.childElementCount)
+                    {
+                        html_text+="<ul>";
+                        for(j=0;j<hubs.childElementCount;j++)
+                            
+                        {
+                            if(hubs.children[j].childNodes.length && hubs.children[j].firstChild.nodeValue.trim()!='')
+                                {
+                                   html_text+="<li>" ;
+                                if(j==0)
+                                {html_text+="<b>";}
+                                html_text+=hubs.children[j].firstChild.nodeValue; 
+                                html_text+="</li>";
+                                if(j==0)
+                                    {
+                                   html_text+="</b>"; }
+                                }
+                            else
+                                {
+                                    html_text+="</br>";  
+                                }
+                        }
+                        
+                    html_text+="</ul>";
+                    }
+                    html_text+="</td>";
+                        
+                        
+                    //NOTES
+                    html_text+="<td>";
+                    if (row[i].getElementsByTagName("Notes")[0].childNodes.length && row[i].getElementsByTagName("Notes")[0].childNodes[0].nodeValue.trim()!='')
+                    
+                    { html_text+=row[i].getElementsByTagName("Notes")[0].childNodes[0].nodeValue; }
+                    else
+                     {
+                       html_text+="<br/>"; 
+                     }
+                        
+                    html_text+="</td>";
+                    //HOMEPAGE
+                    
+                    html_text+="<td>";
+                    if (row[i].getElementsByTagName("HomePage")[0].childNodes.length && row[i].getElementsByTagName("HomePage")[0].childNodes[0].nodeValue.trim()!='')
+                    
+                    {   link=row[i].getElementsByTagName("HomePage")[0].childNodes[0].nodeValue;
+                        html_text+= "<a href="+link+">"+link+"</a>"; }
+                    else
+                     {
+                       html_text+="<br/>";  
+                     }
+                        
+                    html_text+="</td>";
+                    
+                    //PLANE
+                    html_text+="<td>";
+                    if (row[i].getElementsByTagName("Plane")[0].childNodes.length && row[i].getElementsByTagName("Plane")[0].childNodes[0].nodeValue.trim()!='')
+                    
+                    {   
+                        src=row[i].getElementsByTagName("Plane")[0].childNodes[0].nodeValue;
+                        html_text+="<img src=" + src + ">";
+                      }
+                    else
+                     {
+                       html_text+="<br/>" ; 
+                     }
+                        
+                    html_text+="</td></tr>";
+                }
+        
+            //html_text+=headers.item(0).childNodes;
+            html_text+="</table><noscript></body></html>";
+            hWin = window.open("", "Assignment4", "height=4000,width=4000,scrollbar=yes");
+            hWin.document.write(html_text); 
+            hWin.document.close();
+            return false;
+           
+        }  
+            
+        
+        
+        </script>   
+    </body>
+</html>
